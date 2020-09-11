@@ -5,16 +5,16 @@
      SEARCH_USERS, SET_LOADING, GET_USER, CLEAR_USERS, GET_REPOS
  } from '../types'
 
- let githubClientId;
- let githubClientSecret;
+//  let githubClientId;
+//  let githubClientSecret;
 
- if (process.env.NODE_ENV !== 'production') {
-      githubClientId = process.env.REACT_APP_GITHUB_CLIENT_ID
-      githubClientSecret = process.env.REACT_APP_GITHUB_CLIENT_SECRET
- } else {
-  githubClientId = process.env.GITHUB_CLIENT_ID
-  githubClientSecret = process.env.GITHUB_CLIENT_SECRET
- }
+//  if (process.env.NODE_ENV !== 'production') {
+//       githubClientId = process.env.REACT_APP_GITHUB_CLIENT_ID
+//       githubClientSecret = process.env.REACT_APP_GITHUB_CLIENT_SECRET
+//  } else {
+//   githubClientId = process.env.GITHUB_CLIENT_ID
+//   githubClientSecret = process.env.GITHUB_CLIENT_SECRET
+//  }
 
  const GithubState = props => {
      const initialState = {
@@ -32,7 +32,7 @@
             setIsLoading()
           })
          // making req to endpoint search/users
-          await fetch(`https:api.github.com/search/users?q=${text}&client_id=${githubClientId}&client_secret=${githubClientSecret}`)
+          await fetch(`https:api.github.com/search/users?q=${text}&client_id=${process.env.GITHUB_CLIENT_ID}&client_secret=${process.env.GITHUB_CLIENT_SECRET}`)
             .then(res => res.json()) 
             .then(data => {
              dispatch({
@@ -48,7 +48,7 @@
         setTimeout(() => {
           setIsLoading()
         })
-       await fetch(`https://api.github.com/users/${username}?client_id=${githubClientId}&client_secret=${githubClientSecret}`)
+       await fetch(`https://api.github.com/users/${username}?client_id=${process.env.GITHUB_CLIENT_ID}&client_secret=${process.env.GITHUB_CLIENT_SECRET}`)
         .then(res => res.json()) 
         .then(data => {
           dispatch ({
@@ -64,7 +64,7 @@ const getUserRepos = async (username) => {
     setTimeout(() => {
       setIsLoading()
     })
-    await fetch(`https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc&client_id=${githubClientId}&client_secret=${githubClientSecret}`)
+    await fetch(`https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc&client_id=${process.env.GITHUB_CLIENT_ID}&client_secret=${process.env.GITHUB_CLIENT_SECRET}`)
     .then(res => res.json()) 
     .then(data => {
       dispatch({
