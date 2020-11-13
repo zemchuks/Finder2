@@ -86,5 +86,4 @@ const User = ({ match }) => {
             </Fragment>
         )
 }
-
 export default User

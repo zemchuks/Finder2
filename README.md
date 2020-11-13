@@ -5,7 +5,7 @@
 Finder ||
 
 This project is the version 2 of my previous finder application 
-[https://hubfindr.netlify.app/](https://hubfindr.netlify.app/)
+[https://finder2233.netlify.app/](https://finder2233.netlify.app/)
 
 
 It is Built with REACT. 

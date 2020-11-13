@@ -1,4 +1,3 @@
-
 import {
     SEARCH_USERS, SET_LOADING, GET_USER, CLEAR_USERS, GET_REPOS
 } from '../types'

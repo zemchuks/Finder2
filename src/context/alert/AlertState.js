@@ -1,9 +1,7 @@
 import React, { useReducer } from 'react'
 import AlertContext from './AlertContext'
 import alertReducer from './alertReducer'
-import {
-    SET_ALERT, REMOVE_ALERT
-} from '../types'
+import { SET_ALERT, REMOVE_ALERT } from '../types'
 
 const AlertState = props => {
     const initialState = null
@@ -22,7 +20,7 @@ const AlertState = props => {
         alert: state,
         setAlert  
     }}>
-        {props.children}
+        {props.children} 
     </AlertContext.Provider>
 }
 
